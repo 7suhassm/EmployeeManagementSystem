@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Employee Details</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+    h1 { text-align: center; color: #4CAF50; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; font-size: 16px; margin-bottom: 5px; color: #333; }
+    input[type="text"], input[type="email"], input[type="number"], input[type="submit"] { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    input[type="submit"] { background-color: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; }
+    input[type="submit"]:hover { background-color: #45a049; }
+    .checkbox-group { margin-bottom: 20px; }
+    .checkbox-group label { margin-right: 10px; }
+
+    /* Style for the anchor tag (Home link) */
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    /* Anchor tag hover effect */
+    a:hover {
+      color: #45a049;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Update Employee Details</h1>
+
+    <!-- Form to update employee details -->
+    <form action="http://localhost:9090/EmployeeManagementSystem/UpdateEmployee"  onsubmit="enableFieldsBeforeSubmit()">
+      <div class="form-group">
+        <label for="id">Employee ID</label>
+        <input type="text" id="id" name="id" />
+      </div>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="updateName" name="updateName" /> Update Name</label>
+        <label><input type="checkbox" id="updateAge" name="updateAge" /> Update Age</label>
+        <label><input type="checkbox" id="updateGender" name="updateGender" /> Update Gender</label>
+        <label><input type="checkbox" id="updateEmail" name="updateEmail" /> Update Email</label>
+        <label><input type="checkbox" id="updateDepartment" name="updateDepartment" /> Update Department</label>
+        <label><input type="checkbox" id="updatePassword" name="updatePassword" /> Update Password</label>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"  disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age"  disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="gender"  disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"  disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" id="department" name="department"  disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password (Numbers only)</label>
+        <input type="number" id="password" name="password"  disabled />
+      </div>
+
+      <input type="submit" value="Update Employee" />
+      
+      <!-- Styled Home link -->
+      <a href="http://localhost:9090/EmployeeManagementSystem/Hello.html">Home</a>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to enable/disable input fields based on checkbox selection
+    document.getElementById("updateName").addEventListener("change", function() {
+      document.getElementById("name").disabled = !this.checked;
+    });
+    document.getElementById("updateAge").addEventListener("change", function() {
+      document.getElementById("age").disabled = !this.checked;
+    });
+    document.getElementById("updateGender").addEventListener("change", function() {
+      document.getElementById("gender").disabled = !this.checked;
+    });
+    document.getElementById("updateEmail").addEventListener("change", function() {
+      document.getElementById("email").disabled = !this.checked;
+    });
+    document.getElementById("updateDepartment").addEventListener("change", function() {
+      document.getElementById("department").disabled = !this.checked;
+    });
+    document.getElementById("updatePassword").addEventListener("change", function() {
+      document.getElementById("password").disabled = !this.checked;
+    });
+
+    // Function to enable fields before form submission to ensure data is sent
+    function enableFieldsBeforeSubmit() {
+      if (document.getElementById("updateName").checked) {
+        document.getElementById("name").disabled = false;
+      }
+      if (document.getElementById("updateAge").checked) {
+        document.getElementById("age").disabled = false;
+      }
+      if (document.getElementById("updateGender").checked) {
+        document.getElementById("gender").disabled = false;
+      }
+      if (document.getElementById("updateEmail").checked) {
+        document.getElementById("email").disabled = false;
+      }
+      if (document.getElementById("updateDepartment").checked) {
+        document.getElementById("department").disabled = false;
+      }
+      if (document.getElementById("updatePassword").checked) {
+        document.getElementById("password").disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

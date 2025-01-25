@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Employee</title>
+  <style>
+    /* General body styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Container for the form */
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Header styling */
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* Form styling */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Label and input styling */
+    label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      text-decoration: none;
+      color: #4CAF50;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ENTER EMPLOYEE ID TO DELETE</h1>
+    <form action="http://localhost:9090/EmployeeManagmentSystem/Delete">
+      <label for="id">ID: </label>
+      <input type="text" name="i" id="id" required>
+      <input type="submit" value="SUBMIT">
+    </form>
+    <a href="http://localhost:9090/EmployeeManagementSystem/Hello.html">Home</a>
+  </div>
+</body>
+</html>
